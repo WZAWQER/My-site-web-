@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODREX</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<div class="rain" style="z-index: -1;"></div>
+<script>
+  const rainContainer = document.querySelector('.rain');
+  const numberOfDrops = 100;
+
+  for (let i = 0; i < numberOfDrops; i++) {
+    const drop = document.createElement('div');
+    drop.classList.add('drop');
+    drop.style.left = `${Math.random() * 100}vw`;
+    drop.style.animationDuration = `${Math.random() * 0.5 + 0.5}s`;
+    drop.style.animationDelay = `${Math.random() * 2}s`;
+    rainContainer.appendChild(drop);
+  }
+</script>
+<style>
+  .rain {
+  position: absolute;
+  top: 110;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0e0e0e;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.drop {
+  position: absolute;
+  bottom: 100%;
+  width: 1px;
+  height: 100px;
+  background: linear-gradient(transparent, rgba(253, 253, 253, 0.5));
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+  }
+}
+.rain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 180%;
+  background: #0e0e0e;
+  pointer-events: none;
+  z-index: -1; /* Ajoutez cette ligne */
+}
+</style>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#à-propos">À propos</a></li>
+                <li><a href="#réseaux">Réseaux</a></li>
+                <li><a href="#contact">Mes codes</a></li>
+            </ul>
+        </nav>
+        <div class="logo">
+            <img src="logo.png" alt="MODREX Logo">
+        </div>
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="title">MODREX</h1>
+            <p class="subtitle">Bienvenue sur mon site web !</p>
+    </section>
+    <!-- Réseaux -->
+    <section id="réseaux" class="section">
+      <h2 class="title">Réseaux</h2>
+      <ul>
+          <li><a href="https://www.tiktok.com/@modrex.0?_t=8puB9cdpGng&_r=1">Tiktok</a></li>
+          <li><a href="https://onlyfans.com/">Bientôt</a></li>
+          <!-- Ajoutez vos autres réseaux ici -->
+      </ul>
+  </section>
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <h2 class="title">Mes codes</h2>
+<div class="card">
+  <div class="titlebar">
+    <span class="buttons">
+    <button class="minimize">
+			<svg x="0px" y="0px" viewBox="0 0 10.2 1"><rect x="0" y="50%" width="10.2" height="1"></rect></svg>
+		</button>
+    <button class="maximize">
+			<svg viewBox="0 0 10 10"><path d="M0,0v10h10V0H0z M9,9H1V1h8V9z"></path></svg>
+		</button>
+    <button class="close">
+			<svg viewBox="0 0 10 10"><polygon points="10.2,0.7 9.5,0 5.1,4.4 0.7,0 0,0.7 4.4,5.1 0,9.5 0.7,10.2 5.1,5.8 9.5,10.2 10.2,9.5 5.8,5.1"></polygon></svg>
+		</button>
+    </span>
+  </div>
+  <div class="cppcode">
+    <pre id="pre"><code><span class="s1">#include</span> <span class="s2">&lt;iostream&gt;</span>
+using<span class="s3"> namespace </span>std<span class="sc">;</span>
+
+<span class="s3">int</span> <span class="s2">main()</span> <span class="curlies">{</span>
+
+  <span class="s3">int</span> <span class="s4">a</span> <span class="operator">=</span> 12<span class="sc">;</span>
+  <span class="s3">int</span> <span class="s4">b</span> <span class="operator">=</span> 5<span class="sc">;</span>
+
+  <span class="s4">cout</span> <span class="s5">&lt;&lt;</span> <span class="s1">"Sum of the numbers
+    is: "</span> <span class="s5">&lt;&lt;</span> <span class="rounds">(</span><span class="s4">a </span><span class="operator">+</span><span class="s4"> b</span><span class="rounds">)</span><span class="sc">;</span>
+
+  <span class="s6">return</span> 0<span class="sc">;</span>
+
+<span class="curlies">}</span>
+
+    </code></pre>
+  </div>
+ </div>
+  </section>
+
+    <!-- À propos -->
+    <section id="à-propos" class="section">
+        <h2 class="title">À propos</h2>
+        <p class="text">Bonjour, ravi de vous voir sur mon site web que j'ai créé !</p>
+        <video src="video.mp4" width="100%" height="510" controls></video>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 MODREX</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
